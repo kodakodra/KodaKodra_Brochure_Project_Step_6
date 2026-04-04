@@ -34,7 +34,7 @@ require_once 'includes/header.php';
 
                         <!-- Name -->
                         <div class="mb-4">
-                            <label for="name" class="form-label">Name</label>
+                            <label for="name" class="form-label">Name <span class="text-danger ms-1">*</span></label>
                             <input
                                 type="text"
                                 id="name"
@@ -43,12 +43,13 @@ require_once 'includes/header.php';
                                 placeholder="Your name"
                                 maxlength="100"
                                 required
+                                autofocus
                             >
                         </div>
 
                         <!-- Email -->
                         <div class="mb-4">
-                            <label for="email" class="form-label">Email Address</label>
+                            <label for="email" class="form-label">Email Address <span class="text-danger ms-1">*</span></label>
                             <input
                                 type="email"
                                 id="email"
@@ -61,7 +62,7 @@ require_once 'includes/header.php';
 
                         <!-- Message -->
                         <div class="mb-4">
-                            <label for="message" class="form-label">Message</label>
+                            <label for="message" class="form-label">Message <span class="text-danger ms-1">*</span></label>
                             <textarea
                                 id="message"
                                 name="message"
@@ -126,6 +127,7 @@ require_once 'includes/header.php';
                     <div class="availability-box">
                         <p>
                             <strong>Currently available</strong> for remote freelance work, contract projects, and collaboration.<br><br>
+                            Whether you need a site built from scratch, an existing project rescued, or just a specific problem solved — get in touch and we'll figure out if it's a good fit.<br><br>
                             <strong>Response time:</strong> typically within 24 hours.
                         </p>
                     </div>
