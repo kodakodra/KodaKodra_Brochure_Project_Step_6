@@ -83,14 +83,14 @@ require_once 'includes/header.php';
                     <form method="POST" action="login.php" novalidate>
 
                         <div class="mb-4">
-                            <label for="email" class="form-label">Email Address</label>
+                            <label for="email" class="form-label">Email Address <span class="text-danger ms-1">*</span></label>
                             <input type="email" id="email" name="email" class="form-control"
                                    value="<?= htmlspecialchars($_POST['email'] ?? '') ?>"
                                    required>
                         </div>
 
                         <div class="mb-4">
-                            <label for="password" class="form-label">Password</label>
+                            <label for="password" class="form-label">Password <span class="text-danger ms-1">*</span></label>
                             <input type="password" id="password" name="password" class="form-control" required>
                         </div>
 

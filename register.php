@@ -99,27 +99,27 @@ require_once 'includes/header.php';
                         <form method="POST" action="register.php" novalidate>
 
                             <div class="mb-4">
-                                <label for="name" class="form-label">Name</label>
+                                <label for="name" class="form-label">Name <span class="text-danger ms-1">*</span></label>
                                 <input type="text" id="name" name="name" class="form-control"
                                        value="<?= htmlspecialchars($_POST['name'] ?? '') ?>"
                                        maxlength="100" required>
                             </div>
 
                             <div class="mb-4">
-                                <label for="email" class="form-label">Email Address</label>
+                                <label for="email" class="form-label">Email Address <span class="text-danger ms-1">*</span></label>
                                 <input type="email" id="email" name="email" class="form-control"
                                        value="<?= htmlspecialchars($_POST['email'] ?? '') ?>"
                                        required>
                             </div>
 
                             <div class="mb-4">
-                                <label for="password" class="form-label">Password</label>
+                                <label for="password" class="form-label">Password <span class="text-danger ms-1">*</span></label>
                                 <input type="password" id="password" name="password" class="form-control"
                                        minlength="8" required>
                             </div>
 
                             <div class="mb-4">
-                                <label for="confirm" class="form-label">Confirm Password</label>
+                                <label for="confirm" class="form-label">Confirm Password <span class="text-danger ms-1">*</span></label>
                                 <input type="password" id="confirm" name="confirm" class="form-control"
                                        minlength="8" required>
                             </div>
