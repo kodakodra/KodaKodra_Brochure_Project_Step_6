@@ -69,21 +69,14 @@ require_once 'includes/header.php';
                         <tbody>
                         <?php foreach ($submissions as $sub): ?>
                             <tr>
-                                <!-- Submission ID -->
                                 <td><?= $sub['id'] ?></td>
-
-                                <!-- Name submitted in the form -->
-                                <td><?= htmlspecialchars($sub['name']) ?></td>
-
-                                <!-- Email submitted in the form -->
-                                <td>
+                                <td data-label="Name"><?= htmlspecialchars($sub['name']) ?></td>
+                                <td data-label="Email">
                                     <a href="mailto:<?= htmlspecialchars($sub['email']) ?>">
                                         <?= htmlspecialchars($sub['email']) ?>
                                     </a>
                                 </td>
-
-                                <!-- Linked account if the user was logged in, otherwise Guest -->
-                                <td>
+                                <td data-label="Account">
                                     <?php if ($sub['account_name']): ?>
                                         <?= htmlspecialchars($sub['account_name']) ?>
                                         <span class="admin-meta"><?= htmlspecialchars($sub['account_email']) ?></span>
@@ -91,16 +84,10 @@ require_once 'includes/header.php';
                                         <span class="admin-meta">Guest</span>
                                     <?php endif; ?>
                                 </td>
-
-                                <!-- Message truncated in table — full message in tooltip -->
-                                <td title="<?= htmlspecialchars($sub['message']) ?>">
+                                <td data-label="Message" title="<?= htmlspecialchars($sub['message']) ?>">
                                     <?= htmlspecialchars(mb_strimwidth($sub['message'], 0, 80, '...')) ?>
                                 </td>
-
-                                <!-- Formatted date -->
-                                <td class="admin-meta">
-                                    <?= date('d M Y, H:i', strtotime($sub['created_at'])) ?>
-                                </td>
+                                <td data-label="Submitted"><?= date('d M Y, H:i', strtotime($sub['created_at'])) ?></td>
                             </tr>
                         <?php endforeach; ?>
                         </tbody>

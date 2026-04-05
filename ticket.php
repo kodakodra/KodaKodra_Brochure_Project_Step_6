@@ -108,10 +108,8 @@ require_once 'includes/header.php';
                             <input type="hidden" name="ticket_id" value="<?= $ticketId ?>">
 
                             <div class="mb-3">
-                                <label>
-                                    <textarea name="message" class="form-control" rows="5"
-                                              placeholder="Write your reply..." required></textarea>
-                                </label>
+                                <textarea name="message" class="form-control" rows="5"
+                                          placeholder="Write your reply..." required></textarea>
                             </div>
 
                             <div class="d-flex gap-3">

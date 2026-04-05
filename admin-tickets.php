@@ -62,18 +62,18 @@ require_once 'includes/header.php';
                         <?php foreach ($tickets as $t): ?>
                             <tr>
                                 <td><?= $t['id'] ?></td>
-                                <td><?= htmlspecialchars($t['subject']) ?></td>
-                                <td>
+                                <td data-label="Subject"><?= htmlspecialchars($t['subject']) ?></td>
+                                <td data-label="Owner">
                                     <?= htmlspecialchars($t['owner_name']) ?>
                                     <span class="admin-meta"><?= htmlspecialchars($t['owner_email']) ?></span>
                                 </td>
-                                <td>
-                                        <span class="ticket-badge ticket-badge--<?= $t['status'] ?>">
-                                            <?= ucfirst($t['status']) ?>
-                                        </span>
+                                <td data-label="Status">
+                                    <span class="ticket-badge ticket-badge--<?= $t['status'] ?>">
+                                        <?= ucfirst($t['status']) ?>
+                                    </span>
                                 </td>
-                                <td class="admin-meta"><?= date('d M Y, H:i', strtotime($t['updated_at'])) ?></td>
-                                <td>
+                                <td data-label="Updated"><?= date('d M Y, H:i', strtotime($t['updated_at'])) ?></td>
+                                <td data-label="Action">
                                     <a href="ticket.php?id=<?= $t['id'] ?>">View</a>
                                 </td>
                             </tr>

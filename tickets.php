@@ -70,6 +70,7 @@ require_once 'includes/header.php';
                                         <?= ucfirst($t['status']) ?>
                                     </span>
                                 </a>
+                                <hr>
                             <?php endforeach; ?>
                         </div>
                     <?php endif; ?>
@@ -86,13 +87,13 @@ require_once 'includes/header.php';
                             <input type="hidden" name="action" value="create">
 
                             <div class="mb-3">
-                                <label for="subject" class="form-label">Subject</label>
+                                <label for="subject" class="form-label">Subject <span class="text-danger ms-1">*</span></label>
                                 <input type="text" id="subject" name="subject" class="form-control"
                                        placeholder="Brief summary of your issue" maxlength="150" required>
                             </div>
 
                             <div class="mb-3">
-                                <label for="message" class="form-label">Message</label>
+                                <label for="message" class="form-label">Message <span class="text-danger ms-1">*</span></label>
                                 <textarea id="message" name="message" class="form-control"
                                           rows="5" placeholder="Describe your issue..." required></textarea>
                             </div>

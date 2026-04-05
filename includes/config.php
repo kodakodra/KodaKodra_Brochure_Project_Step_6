@@ -39,7 +39,7 @@ define('DB_PASS', '');
 =========================== */
 
 // The address all contact form submissions will be sent to
-define('MAIL_TO', 'kodakodradev@gmail.com');
+define('MAIL_TO', 'admin@example.com');
 
 // The name that appears in the "To" field of received emails
 define('MAIL_TO_NAME', 'KodaKodra');
@@ -51,7 +51,7 @@ define('MAIL_HOST', 'smtp.gmail.com');
 define('MAIL_PORT', 587);
 
 // Your Gmail address used to send emails via SMTP
-define('MAIL_USERNAME', 'kodakodradev@gmail.com');
+define('MAIL_USERNAME', 'admin@example.com');
 
 // Your Gmail App Password — generate one at myaccount.google.com/apppasswords
 // Never commit this to a public repo — move to .env before deploying

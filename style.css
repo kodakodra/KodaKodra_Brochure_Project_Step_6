@@ -651,133 +651,38 @@ footer a:hover {
 }
 
 /* ===========================
-   Ticket List
-   Add to style.css
+   Responsive Table (mobile)
 =========================== */
+@media (max-width: 768px) {
+    .admin-table thead {
+        display: none;
+    }
 
-/* Wraps the list of tickets on tickets.php */
-.ticket-list {
-    display:        flex;
-    flex-direction: column;
-    gap:            1px;
-    border:         1px solid var(--clr-border);
-}
+    .admin-table tr {
+        display:       block;
+        border:        1px solid var(--clr-border);
+        margin-bottom: 16px;
+        padding:       16px;
+    }
 
-/* Each row in the ticket list — acts as a link */
-.ticket-row {
-    display:          flex;
-    align-items:      center;
-    justify-content:  space-between;
-    gap:              16px;
-    padding:          16px 20px;
-    background-color: var(--clr-surface);
-    border-bottom:    1px solid var(--clr-border);
-    color:            var(--clr-text);
-    text-decoration:  none;
-}
+    .admin-table td {
+        display:     block;
+        padding:     6px 0;
+        border:      none;
+        font-size:   0.82rem;
+    }
 
-.ticket-row:last-child {
-    border-bottom: none;
-}
+    .admin-table td::before {
+        content:        attr(data-label) ' ';
+        color:          var(--clr-accent);
+        font-size:      0.7rem;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        display:        block;
+        margin-bottom:  2px;
+    }
 
-.ticket-row:hover {
-    background-color: #1a1a1a;
-}
-
-.ticket-row__main {
-    display:        flex;
-    flex-direction: column;
-    gap:            4px;
-}
-
-.ticket-row__subject {
-    font-size:   0.88rem;
-    font-weight: bold;
-    color:       var(--clr-text);
-}
-
-.ticket-row__meta {
-    font-size: 0.75rem;
-    color:     var(--clr-muted);
-}
-
-/* ===========================
-   Ticket Status Badges
-   Add to style.css
-=========================== */
-
-.ticket-badge {
-    display:        inline-block;
-    font-size:      0.68rem;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    padding:        3px 10px;
-    border:         1px solid;
-    white-space:    nowrap;
-}
-
-/* Open — accent yellow */
-.ticket-badge--open {
-    color:        var(--clr-accent);
-    border-color: var(--clr-accent);
-}
-
-/* Pending — muted blue */
-.ticket-badge--pending {
-    color:        #7eb8f7;
-    border-color: #7eb8f7;
-}
-
-/* Closed — muted grey */
-.ticket-badge--closed {
-    color:        var(--clr-muted);
-    border-color: var(--clr-border);
-}
-
-/* Admin badge on ticket replies */
-.ticket-badge--admin {
-    color:        #eb5757;
-    border-color: #eb5757;
-}
-
-/* ===========================
-   Ticket Thread
-   Add to style.css
-=========================== */
-
-/* Wraps the full reply thread on ticket.php */
-.ticket-thread {
-    display:        flex;
-    flex-direction: column;
-    gap:            16px;
-}
-
-/* Individual reply bubble */
-.ticket-reply {
-    padding:          20px 24px;
-    border:           1px solid var(--clr-border);
-    background-color: var(--clr-surface);
-}
-
-/* Admin replies get a left accent border to stand out */
-.ticket-reply--admin {
-    border-left: 3px solid #eb5757;
-}
-
-.ticket-reply--user {
-    border-left: 3px solid var(--clr-accent);
-}
-
-.ticket-reply__header {
-    display:       flex;
-    align-items:   center;
-    gap:           10px;
-    margin-bottom: 12px;
-    font-size:     0.82rem;
-}
-
-.ticket-reply__body {
-    font-size:   0.85rem;
-    color:       var(--clr-muted);
-    line-height: 1.8;
+    .admin-table td:first-child {
+        display: none;
+    }
 }
