@@ -112,20 +112,19 @@ require_once 'includes/header.php';
                                           placeholder="Write your reply..." required></textarea>
                             </div>
 
-                            <div class="d-flex gap-3">
-                                <button type="submit" class="btn btn-accent">Send Reply</button>
-
-                                <!-- Close ticket button — only owner or admin -->
-                                <form method="POST" action="ticket-handler.php" style="margin: 0;">
-                                    <input type="hidden" name="action" value="close">
-                                    <input type="hidden" name="ticket_id" value="<?= $ticketId ?>">
-                                    <button type="submit" class="btn btn-outline-accent"
-                                            onclick="return confirm('Close this ticket?')">
-                                        Close Ticket
-                                    </button>
-                                </form>
-                            </div>
+                            <button type="submit" class="btn btn-accent">Send Reply</button>
                         </form>
+
+                        <!-- Close ticket — separate form, outside the reply form -->
+                        <form method="POST" action="ticket-handler.php" style="margin-top: 12px;">
+                            <input type="hidden" name="action" value="close">
+                            <input type="hidden" name="ticket_id" value="<?= $ticketId ?>">
+                            <button type="submit" class="btn btn-outline-accent"
+                                    onclick="return confirm('Close this ticket?')">
+                                Close Ticket
+                            </button>
+                        </form>
+
                     <?php else: ?>
                         <p style="font-size: 0.85rem; color: var(--clr-muted);">This ticket is closed.</p>
                     <?php endif; ?>
