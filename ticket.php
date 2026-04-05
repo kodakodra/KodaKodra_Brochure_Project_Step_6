@@ -52,7 +52,7 @@ $stmt = $pdo->prepare('
 $stmt->execute([$ticketId]);
 $replies = $stmt->fetchAll();
 
-$errorMsg = $_GET['error'] === 'closed' ? 'This ticket is closed and cannot receive new replies.' : '';
+$errorMsg = ($_GET['error'] ?? '') === 'closed' ? 'This ticket is closed and cannot receive new replies.' : '';
 
 $pageTitle = 'Ticket #' . $ticketId;
 require_once 'includes/header.php';
